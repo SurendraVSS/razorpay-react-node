@@ -9,9 +9,9 @@ const Home = () => {
 
     const checkoutHandler = async (amount) => {
 
-        const { data: { key } } = await axios.get("http://www.localhost:4000/api/getkey")
+        const { data: { key } } = await axios.get("https://rozorpaychinmay.onrender.com/api/getkey")
 
-        const { data: { order } } = await axios.post("http://localhost:4000/api/checkout", {
+        const { data: { order } } = await axios.post("https://rozorpaychinmay.onrender.com/api/checkout", {
             amount
         })
 
@@ -19,7 +19,7 @@ const Home = () => {
             key,
             amount: order.amount,
             currency: "INR",
-            name: "6 Pack Programmer",
+            name: "Chinmay Programmer",
             description: "Tutorial of RazorPay",
             image: "https://avatars.githubusercontent.com/u/25058652?v=4",
             order_id: order.id,
